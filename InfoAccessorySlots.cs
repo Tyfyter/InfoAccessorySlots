@@ -5,7 +5,6 @@ using Mono.Cecil.Cil;
 using MonoMod.Cil;
 using MonoMod.Core.Platforms;
 using MonoMod.Utils;
-using Newtonsoft.Json.Bson;
 using ReLogic.Graphics;
 using System;
 using System.Collections.Generic;
@@ -38,7 +37,8 @@ public class InfoAccessorySlots : Mod {
 		.RegisterBoolSet(
 			DontHurtNatureBookInactive,
 			DontHurtCrittersBookInactive,
-			DontHurtComboBookInactive
+			DontHurtComboBookInactive,
+			UncumberingStone
 		);
 		int itemType = -1;
 		static bool matchComparison(Instruction i) {
@@ -213,7 +213,7 @@ public class InfoAccessorySlotsPlayer : ModPlayer {
 	delegate void hook_ResetInfoAccessories(orig_ResetInfoAccessories orig, Player self);
 	static void ResetInfoAccessories(orig_ResetInfoAccessories orig, Player self) {
 		orig(self);
-		self.GetModPlayer<InfoAccessorySlotsPlayer>().RefreshInfoAccessories();
+		if (!Main.gameMenu) self.GetModPlayer<InfoAccessorySlotsPlayer>().RefreshInfoAccessories();
 	}
 	public override void ResetEffects() {
 		if (items.Length < InfoAccessorySlotsConfig.Instance.SlotCount) {
@@ -249,6 +249,7 @@ public class InfoAccessorySlotsPlayer : ModPlayer {
 		return items;
 	}
 	public override void SaveData(TagCompound tag) {
+		for (int i = 0; i < items.Length; i++) items[i] ??= new();
 		tag["Items"] = items.ToList();
 	}
 	public override void LoadData(TagCompound tag) {

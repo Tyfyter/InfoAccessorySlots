@@ -1,0 +1,53 @@
+Configs: {
+	InfoAccessorySlotsConfig: {
+		DisplayName: Info Accessory Slots Config
+
+		SlotMode: {
+			Label: Slot Mode
+			Tooltip: ""
+		}
+
+		AllowUsable: {
+			Label: Allow Usable
+			Tooltip: ""
+		}
+
+		SlotCount: {
+			Label: Slot Count
+			Tooltip: ""
+		}
+
+		SlotOffset: {
+			Label: Slot Offset
+			Tooltip: ""
+		}
+	}
+
+	SlotMode: {
+		Tooltip: ""
+
+		InfoAccessories: {
+			Label: Informational
+			Tooltip: ""
+		}
+
+		MechAccessories: {
+			Label: Other Passive
+			Tooltip: ""
+		}
+
+		Both: {
+			Label: Both
+			Tooltip: ""
+		}
+	}
+}
+
+TextOverSlots: {
+	InfoAccessories: Info
+	MechAccessories: Passive
+	Both: Passive
+}
+
+DisabledItem: This item has been disabled in {0} slots
+SlotOverMax: This slot is over the limit of {0} slots

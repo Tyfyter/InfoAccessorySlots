@@ -1,1 +1,12 @@
-This description will show up on the steam page, check out https://steamcommunity.com/comment/Guide/formattinghelp.
+This mod adds a configurable amount of slots into which you can put informational accessories and other items which have passive effects while in the inventory (configurable)
+
+[hr][/hr]
+
+FAQ:
+Q: How do I make this mod support my item?
+A: If your item overrides [b]ModItem.UpdateInfoAccessory[/b] or [b]ModItem.UpdateInventory[/b], it already does! If your item does not override either of these, you can use the named sets [b]IsAnInfoAccessory[/b] and [b]IsAMechanicalAccessory[/b] to add your item to the appropriate category
+
+Q: Isn't there already another mod that does this?
+A: Yes, but it requires every mod to support it manually, which means that it's unlikely to work with most modded informational accessories;
+It also has no configuration options, so it will effectively be incompatible with any other mods that add slots in the same place, and if you disagree with its creator's design choices you're still stuck with them.
+Still, if you're still playing 1.4.3 for some reason, such as wanting to use abandoned mods, check out [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2924167544]Info Slot[/url]

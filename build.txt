@@ -1,3 +1,5 @@
 displayName = Info Accessory Slots
 author = Moonlight Glint
-version = 0.1
+version = 1.0
+
+homepage = https://tyfyter.github.io/?InfoAccessorySlots
